@@ -1,0 +1,17 @@
+#btn-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-default {
+  background-color: red;
+
+}
+
+.btn-change {
+  background-color: green;
+}
+
+.btn-end {
+    background-color: pink;
+}
