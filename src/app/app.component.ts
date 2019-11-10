@@ -22,7 +22,11 @@ export class AppComponent {
   }
 
   sendMessage() {
-    this.chatService.sendMessage(this.message);
+      var message_json = {
+          message: this.message,
+      }
+    this.chatService.sendMessage(message_json);
+    //this.chatService.sendMessage(this.message);
     this.messages.push(this.message);
 
      const myElement: HTMLElement = document.getElementById("testId");

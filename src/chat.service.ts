@@ -10,6 +10,7 @@ export class ChatService {
     }
 
     public sendMessage(message) {
+        console.log(`Sending message to server from chat service with ${message}`)
         this.socket.emit('new-message', message);
     }
 
