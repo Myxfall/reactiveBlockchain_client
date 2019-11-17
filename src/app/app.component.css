@@ -5,13 +5,40 @@
 
 .btn-default {
   background-color: red;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .btn-change {
   background-color: green;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  border: black solid 2px;
+  border-radius: 10px;
+  min-height: 5vw;
+  margin: 0.5vw 0;
 }
 
 .btn-end {
     background-color: pink;
+}
+
+.bntStyle {
+    background-color: pink;
+}
+
+.diploma-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vw;
+    padding: 0 1vw;
+    background-color: burlywood;
 }

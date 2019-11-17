@@ -5,11 +5,34 @@
 <input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
 <button (click)="sendMessage()">Send</button>
 
+<h1>Diploma Ledger</h1>
+<div class="diploma-content">
+    <div class="container diplomas">
+        <h2>Diplomas</h2>
+        <div *ngFor="let diploma of diplomas; let index = index" [ngClass]="[bntStyle]" >
+            {{diploma}}
+        </div>
+    </div>
+    <div class="container grades">
+        <h2>Grades</h2>
+        <div *ngFor="let grade of grades; let index = index" [ngClass]="[bntStyle]" >
+            {{grade}}
+        </div>
+    </div>
+</div>
 
 <div *ngFor="let message of messages; let index = index" [ngClass]="[bntStyle]" >
     {{message}}
     {{index}}
 </div>
 
+
+<h1>TEst NG for class with divs</h1>
+<div *ngFor="let message of messages; let index = index" class="message-{{index}}" >
+    {{message}}
+    {{index}}
+</div>
+
 <br><br><br>
 <div id="testId">testStyle</div>
+<div class="testIdBis">testStyleBis</div>
