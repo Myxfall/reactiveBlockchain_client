@@ -2,8 +2,16 @@
 
 <p>Please ignore everything</p>
 
-<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
-<button (click)="sendMessage()">Send</button>
+<div class="diploma-form-container">
+    <span class="form-title">Diploma form</span>
+    <input [(ngModel)]="type" (keyup)="$event.keyCode == 13 && sendMessage()" value="diploma"/>
+    <input [(ngModel)]="username" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="username"/>
+    <input [(ngModel)]="school" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="school"/>
+    <input [(ngModel)]="study" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="study"/>
+    <input [(ngModel)]="first_name" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="first name"/>
+    <input [(ngModel)]="last_name" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="last name"/>
+    <button (click)="sendMessage()">Send</button>
+</div>
 
 <h1>Diploma Ledger</h1>
 <div class="diploma-content">
@@ -19,11 +27,6 @@
             {{grade}}
         </div>
     </div>
-</div>
-
-<div *ngFor="let message of messages; let index = index" [ngClass]="[bntStyle]" >
-    {{message}}
-    {{index}}
 </div>
 
 

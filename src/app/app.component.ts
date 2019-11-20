@@ -19,6 +19,12 @@ export class AppComponent {
     diplomas: string[] = [];
     grades: string[] = [];
 
+    type:string;
+    username:string;
+    school:string;
+    study:string;
+    first_name:string;
+    last_name:string;
 
     constructor(private chatService: ChatService) {
         this.counter = 0;
@@ -27,13 +33,17 @@ export class AppComponent {
     }
 
     sendMessage() {
-        var message_json = {
-            message: this.message,
+        var diploma_json = {
+            type: this.type,
+            username: this.username,
+            school: this.school,
+            study: this.study,
+            first_name: this.first_name,
+            last_name: this.last_name,
         }
-
-        this.messages.push(this.message);
-        this.chatService.sendMessage(message_json);
-        this.currentMessageCounter = this.messages.length - 1;
+        console.log(diploma_json);
+        this.diplomas.push(`${diploma_json.last_name} ${diploma_json.first_name} got ${diploma_json.study} diploma from the ${diploma_json.school}`);
+        this.chatService.sendMessage(diploma_json);
 
 
         const myElement: HTMLElement = document.getElementById("testId");
@@ -42,7 +52,7 @@ export class AppComponent {
 
 
 
-        this.bntStyle = 'btn-default';
+        //this.bntStyle = 'btn-default';
         this.message = '';
         this.counter = this.counter + 1;
 
