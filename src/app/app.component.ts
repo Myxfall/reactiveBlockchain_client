@@ -23,6 +23,8 @@ export class AppComponent {
     username:string;
     school:string;
     study:string;
+    course:string;
+    grade:string;
     first_name:string;
     last_name:string;
 
@@ -33,36 +35,54 @@ export class AppComponent {
     }
 
     sendMessage() {
-        var diploma_json = {
-            type: this.type,
-            username: this.username,
-            school: this.school,
-            study: this.study,
-            first_name: this.first_name,
-            last_name: this.last_name,
+        var json_to_send = null;
+        switch (this.type) {
+            case 'diploma':
+                json_to_send = {
+                    type: this.type,
+                    username: this.username,
+                    school: this.school,
+                    study: this.study,
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                }
+                break;
+            case 'grade':
+                json_to_send = {
+                    type: this.type,
+                    username: this.username,
+                    school: this.school,
+                    course: this.course,
+                    grade: this.grade,
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                }
+                break;
         }
-        console.log(diploma_json);
-        this.diplomas.push(`${diploma_json.last_name} ${diploma_json.first_name} got ${diploma_json.study} diploma from the ${diploma_json.school}`);
-        this.chatService.sendMessage(diploma_json);
+        console.log(json_to_send);
+        //this.diplomas.push(`${json_to_send.last_name} ${json_to_send.first_name} got ${json_to_send.study} diploma from the ${json_to_send.school}`);
+        this.diplomas.push("Sending in process...");
+        this.chatService.sendMessage(json_to_send);
 
+        // const myElement: HTMLElement = document.getElementById("testId");
+        // myElement.innerHTML += " Worked";
+        // myElement.style.background="blue";
 
-        const myElement: HTMLElement = document.getElementById("testId");
-        myElement.innerHTML += " Worked";
-        myElement.style.background="blue";
-
-
-
-        //this.bntStyle = 'btn-default';
-        this.message = '';
-        this.counter = this.counter + 1;
-
+        this.bntStyle = 'btn-default';
     }
 
     ngOnInit() {
         this.chatService
         .getMessages().delay(1000)
         .subscribe((data) => {
-            console.log(`Received value from the server with ${data}`);
+            console.log(`Received value from the server with ${JSON.stringify(data)}`);
+
+            if (this.diplomas.includes("Sending in process...")) {
+                this.diplomas.pop();
+            }
+            else if (this.grades.includes("Sending in process...")) {
+                this.grades.pop();
+            }
 
             const data_record = data.record;
             switch (data_record.type) {

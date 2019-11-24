@@ -7,7 +7,11 @@
   background-color: red;
   display: flex;
   flex-direction: column;
-
+  padding: 1vw;
+  border: black solid 2px;
+  border-radius: 10px;
+  min-height: 5vw;
+  margin: 0.5vw 0;
 }
 
 .btn-change {
@@ -40,6 +44,11 @@
     height: fit-content;
     padding: 5vw 0;
 }
+.container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 .container {
     display: flex;
@@ -51,8 +60,8 @@
     background-color: burlywood;
 }
 
-.diploma-form-container {
+.form-container {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 30%;
 }
