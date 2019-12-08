@@ -18,6 +18,8 @@ export class AppComponent {
 
     diplomas: string[] = [];
     grades: string[] = [];
+    diplomas_json = [];
+    grades_json = [];
 
     type:string;
     username:string;
@@ -88,9 +90,12 @@ export class AppComponent {
             switch (data_record.type) {
                 case 'diploma':
                     this.diplomas.push(`${data_record.last_name} ${data_record.first_name} got ${data_record.study} diploma from the ${data_record.school}`);
+                    this.diplomas_json.push(data_record);
                     break;
                 case 'grade':
                     this.grades.push(`The student ${data_record.last_name} with netID ${data_record.username} got ${data_record.grade} for the course ${data_record.course}`);
+                    this.grades_json.push(data_record);
+                    break;
             }
             this.bntStyle = 'btn-change';
         });

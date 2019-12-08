@@ -1,3 +1,7 @@
+:root {
+  --sub-color: #ff6600;
+}
+
 .header-container {
     display: flex;
     flex-direction: row;
@@ -5,7 +9,7 @@
 }
 
 .logo-png {
-    width: 18vw;
+    width: 13vw;
 }
 .links-container {
     display: flex;
@@ -17,15 +21,24 @@
 }
 .header-link {
     padding: 0 2vw;
-    font-size: 2vw;
+    font-size: 1.8vw;
     text-decoration: none;
     font-weight: bold;
     color: #1e1e1e;
-    font-family: "Roboto Condensed";
+    font-family: monospace;
 }
 .header-link:hover {
     color: #ff6600;
 }
+.header-banner {
+    background-image: url("https://www.2basetechnologies.com/wp-content/uploads/2019/06/Role-of-Blockchain-Technology-in-Education-banner.jpg");
+    height: 35vh;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 #btn-container{
     display: flex;
@@ -46,12 +59,16 @@
 .btn-change {
   background-color: green;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 1vw;
   border: black solid 2px;
   border-radius: 10px;
   min-height: 5vw;
   margin: 0.5vw 0;
+  align-items: center;
+}
+.btn-change:hover {
+    background-color: #00349a;
 }
 
 .btn-end {
@@ -87,6 +104,35 @@
     padding: 0 1vw;
     padding-bottom: 3vw;
     background-color: burlywood;
+}
+.basic-text {
+    color: black;
+    padding: 0 0.3vw;
+}
+.student-name {
+    font-weight: bold;
+    color: black;
+}
+.student-university {
+    color: #ff6600;
+    font-style: italic;
+    font-weight: bold;
+}
+.student-field {
+    font-weight: bold;
+}
+.student-netid {
+    font-weight: bold;
+    font-size: italic;
+}
+.student-course {
+    color: #ff6600;
+    font-weight: bold;
+    font-size: italic;
+}
+.student-grade {
+    font-weight: bold;
+    color: red;
 }
 
 .form-container {
