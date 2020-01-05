@@ -85,11 +85,11 @@ export class AppComponent {
             if (this.diplomas.includes("Sending in process...")) {
                 this.diplomas.pop();
             }
-            else if (this.grades.includes("Sending in process...")) {
+            if (this.grades.includes("Sending in process...")) {
                 this.grades.pop();
             }
 
-            const data_record = data.record;
+            const data_record = data.Record;
             switch (data_record.type) {
                 case 'diploma':
                     this.diplomas_json.push(data_record);
